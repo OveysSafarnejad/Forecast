@@ -54,9 +54,18 @@ class DailyForecast {
         self._weatherIcon = json["weather"]["icon"].stringValue
     }
     
-    func getDailyWeather(completion: @escaping(_ dailyForecast : [DailyForecast]) -> Void) {
+    class func getDailyWeather(location: WeatherLocation, completion: @escaping(_ dailyForecast : [DailyForecast]) -> Void) {
         
-        let URL = "https://api.weatherbit.io/v2.0/forecast/daily?city=Rasht,IR&days=7&key=d60e1271152e480cba3794c5c6039f58"
+        
+        var URL : String!
+        
+        
+        if !location.isCurrentLocation {
+            URL = String(format: "https://api.weatherbit.io/v2.0/forecast/daily?city=%@,%@&days=7&key=d60e1271152e480cba3794c5c6039f58", location.city , location.countryCode)
+        } else {
+            URL = LOCATION_DAILYFORECAST_URL
+        }
+        
         Alamofire.request(URL).responseJSON { (response) in
             let result = response.result
             

@@ -55,9 +55,16 @@ class HourelyForecast {
         self._weatherIcon = json["weather"]["icon"].stringValue
     }
     
-    func getHourlyWeather(completion: @escaping(_ hourlyForecast : [HourelyForecast]) -> Void) {
+    class func getHourlyWeather(location: WeatherLocation, completion: @escaping(_ hourlyForecast : [HourelyForecast]) -> Void) {
         
-        let URL = "https://api.weatherbit.io/v2.0/forecast/hourly?city=Rasht,IR&hours=24&key=d60e1271152e480cba3794c5c6039f58"
+        var URL : String!
+        
+        
+        if !location.isCurrentLocation {
+            URL = String(format: "https://api.weatherbit.io/v2.0/forecast/hourly?city=%@,%@&hours=24&key=d60e1271152e480cba3794c5c6039f58", location.city , location.countryCode)
+        } else {
+            URL = LOCATION_HOURLYFORECAST_URL
+        }
         
         Alamofire.request(URL).responseJSON { (response) in
             let result = response.result

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func currentDateFromUnixFormat(unixValue: Double?) -> Date {
     
@@ -16,3 +17,10 @@ func currentDateFromUnixFormat(unixValue: Double?) -> Date {
         return Date()
     }
 }
+
+func getweatherIconFor(_ weather: String) -> UIImage {
+    return UIImage(named: weather)!
+}
+
+
+

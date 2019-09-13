@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HourlyForecastCollectionCell" customModule="Weather_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wV3-1U-RMT">
+                        <rect key="frame" x="20" y="30" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="RFC-LG-CM9"/>
+                            <constraint firstAttribute="height" constant="40" id="SFg-ig-9WQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEv-aB-jCf">
+                        <rect key="frame" x="8" y="78.5" width="64" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-1j-pl5">
+                        <rect key="frame" x="8" y="4" width="64" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KEv-aB-jCf" secondAttribute="bottom" constant="4" id="9Vp-SU-u6p"/>
+                <constraint firstItem="HZS-1j-pl5" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="AgA-Nf-Jjh"/>
+                <constraint firstItem="HZS-1j-pl5" firstAttribute="width" secondItem="KEv-aB-jCf" secondAttribute="width" id="EHZ-xL-dD1"/>
+                <constraint firstItem="KEv-aB-jCf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="GAA-EV-THu"/>
+                <constraint firstItem="HZS-1j-pl5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="JVp-Cl-s6c"/>
+                <constraint firstItem="HZS-1j-pl5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="MRT-e4-qLK"/>
+                <constraint firstItem="HZS-1j-pl5" firstAttribute="height" secondItem="KEv-aB-jCf" secondAttribute="height" id="QbG-zu-yXm"/>
+                <constraint firstItem="wV3-1U-RMT" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="aAt-nE-9j0"/>
+                <constraint firstItem="wV3-1U-RMT" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="dkL-M4-EKC"/>
+                <constraint firstAttribute="trailing" secondItem="HZS-1j-pl5" secondAttribute="trailing" constant="8" id="yUw-8g-iyA"/>
+                <constraint firstAttribute="trailing" secondItem="KEv-aB-jCf" secondAttribute="trailing" constant="8" id="yWj-CY-Um4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="temprature" destination="KEv-aB-jCf" id="JOH-eS-6Az"/>
+                <outlet property="time" destination="HZS-1j-pl5" id="7MI-Ei-Evj"/>
+                <outlet property="weatherIcon" destination="wV3-1U-RMT" id="xYP-qm-x26"/>
+            </connections>
+            <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
+        </collectionViewCell>
+    </objects>
+</document>

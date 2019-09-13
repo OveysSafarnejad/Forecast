@@ -126,8 +126,16 @@ class CurrentWeatherState {
     
     
     
-    func getCurrentWeatherState(completion : @escaping (_ success :Bool)-> Void){
-        let URL = "https://api.weatherbit.io/v2.0/current?city=Rasht,IR&key=d60e1271152e480cba3794c5c6039f58"
+    func getCurrentWeatherState(location: WeatherLocation,completion : @escaping (_ success :Bool)-> Void){
+        
+        var URL : String!
+        
+        
+        if !location.isCurrentLocation {
+            URL = String(format: "https://api.weatherbit.io/v2.0/current?city=%@,%@&key=d60e1271152e480cba3794c5c6039f58", location.city , location.countryCode)
+        } else {
+            URL = CURENT_WEATHER_LOCATION_URL
+        }
         
         Alamofire.request(URL).responseJSON { (response) in
             let result = response.result
