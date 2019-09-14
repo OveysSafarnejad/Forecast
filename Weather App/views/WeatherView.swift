@@ -16,8 +16,10 @@ class WeatherView: UIView {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var temprature: UILabel!
+    @IBOutlet weak var humidityImg: UIImageView!
     @IBOutlet weak var humidity: UILabel!
     @IBOutlet weak var windSpeed: UILabel!
+    @IBOutlet weak var windImage: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttomContainer: UIView!
@@ -57,6 +59,7 @@ class WeatherView: UIView {
         addSubview(mainView)
         mainView.frame = self.bounds
         mainView.autoresizingMask = [.flexibleHeight , .flexibleWidth]
+        
         setupDaysTable()
         setuphourlyCollection()
         setupInfoCollection()
@@ -90,6 +93,8 @@ class WeatherView: UIView {
     }
     
     func refresh() {
+        humidityImg.image = UIImage(named: "humidity.png")
+        windImage.image = UIImage(named: "wind.png")
         self.status.minimumScaleFactor = 8/15
         self.status.adjustsFontSizeToFitWidth = true
         setCurrentWeather()

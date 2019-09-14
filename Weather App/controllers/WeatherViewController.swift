@@ -9,7 +9,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControll: UIPageControl!
     @IBOutlet weak var weatherView: WeatherView!
@@ -33,20 +33,19 @@ class WeatherViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradientLayer.zPosition = -1
         self.view.layer.addSublayer(gradientLayer)
-
-//        let weatherView = WeatherView()
-//        weatherView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        //        let weatherView = WeatherView()
+        //        weatherView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         
         location = WeatherLocation(city: "Shiraz", country: "Iran", countryCode: "IR", isCurrentLocation: false)
         //Bundle.main.loadNibNamed("WeatherView", owner: self, options: nil)
         self.getCurrentWeatherInfo(weatherView: weatherView)
         self.getHourlyWeatherInfo(weatherView: weatherView)
         self.getDailyWeatherInfo(weatherView: weatherView)
-//        scrollView.addSubview(weatherView)
+        //        scrollView.addSubview(weatherView)
         
-       
     }
-
+    
     
     //MARK: find data
     
@@ -58,7 +57,7 @@ class WeatherViewController: UIViewController {
             }
         }
     }
-
+    
     
     private func getDailyWeatherInfo(weatherView: WeatherView) {
         
@@ -82,5 +81,5 @@ class WeatherViewController: UIViewController {
             }
         }
     }
-
+    
 }
